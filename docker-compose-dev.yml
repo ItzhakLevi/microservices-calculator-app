@@ -35,6 +35,8 @@ services:
   ui-service:
     image: "leonjalfon1/ui-service"
     container_name: ui-service
+    environment:
+      - HOST_IP=localhost
     restart: always
     ports:
      - "3000:3000"
