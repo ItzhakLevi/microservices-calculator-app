@@ -1,7 +1,7 @@
 version: '3'
 services:
   npm-sum-service:
-    image: "leonjalfon1/sum-service"
+    image: "${DOCKERHUB_USERNAME}/sum-service"
     container_name: sum-service
     restart: always
     ports:
@@ -9,7 +9,7 @@ services:
     networks:
      - "npm-microservices"
   npm-subtraction-service:
-    image: "leonjalfon1/subtraction-service"
+    image: "${DOCKERHUB_USERNAME}/subtraction-service"
     container_name: subtraction-service
     restart: always
     ports:
@@ -17,7 +17,7 @@ services:
     networks:
      - "npm-microservices"
   npm-multiplication-service:
-    image: "leonjalfon1/multiplication-service"
+    image: "${DOCKERHUB_USERNAME}/multiplication-service"
     container_name: multiplication-service
     restart: always
     ports:
@@ -25,7 +25,7 @@ services:
     networks:
      - "npm-microservices"
   npm-division-service:
-    image: "leonjalfon1/division-service"
+    image: "${DOCKERHUB_USERNAME}/division-service"
     container_name: division-service
     restart: always
     ports:
@@ -33,10 +33,10 @@ services:
     networks:
      - "npm-microservices"
   ui-service:
-    image: "leonjalfon1/ui-service"
+    image: "${DOCKERHUB_USERNAME}/ui-service"
     container_name: ui-service
     environment:
-      - HOST_IP=localhost
+      - HOST_IP=${HOST_IP}
     restart: always
     ports:
      - "3000:3000"
